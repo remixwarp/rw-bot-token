@@ -1,0 +1,16 @@
+name = "rw-bot-token"
+main = "src/index.js"
+compatibility_date = "2025-01-01"
+
+[vars]
+# 允许推送的仓库白名单（逗号分隔，大小写不敏感）。
+# 以后要给更多仓库开通，在后面追加 "owner/name" 再重新 deploy 即可。
+ALLOWED_REPOS = "remixwarp/rwc,RemixWarp-rw/rw-owr"
+
+# CORS 来源白名单：* 表示放行所有来源。
+# 部署稳定后建议改成具体域名（逗号分隔），例如：
+# ALLOWED_ORIGINS = "https://remixwarp.pages.dev,https://<rwc 的域名>"
+ALLOWED_ORIGINS = "*"
+
+# token 不写在这里！部署后执行：
+#   npx wrangler secret put GH_TOKEN
